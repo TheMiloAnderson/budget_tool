@@ -1,0 +1,9 @@
+autopep8==1.4.3
+confusable-homoglyphs==3.2.0
+Django==2.2
+django-registration==3.0
+pep8==1.7.1
+psycopg2-binary==2.8.1
+pycodestyle==2.5.0
+pytz==2018.9
+sqlparse==0.3.0

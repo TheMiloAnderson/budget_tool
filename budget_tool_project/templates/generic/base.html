@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang= "en">
+    <head>
+        <meta charset ="UTF-8">
+        <meta name = "viewport content" content = "width+device-width, initial-scal=1.0">
+        <meta http-equiv = "X-UA-Compatible" content = "ie=edge">
+        {% block title %}
+        {% endblock title %}
+    </head>
+    <body>
+        <header>
+            <h1>Django</h1>
+            <h4>Welcome, {{ user.username }}</h4>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                {% if user.is_authenticated %}
+                    {% if user.is_superuser %}
+                    <li><a href="{% url 'admin:index' %}">Admin</a></li>
+                    {% endif %}
+                <li><a href="{% url 'logout' %}">Logout</a></li>
+                {% else %}
+                <li><a href="{% url 'django_registration_register' %}">Signup</a></li>
+                <li><a href="{% url 'login' %}">Login</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+        </header>
+        <main>
+            {% block content %}
+            <h2>Nothing to see</h2>
+            {% endblock content %}
+        </main>
+        <footer></footer>
+    </body>
+</html>
