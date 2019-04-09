@@ -45,7 +45,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_registration',
     'budget_tool_project',
-    'budgets_app'
+    'budgets_app',
+    'sass_processor'
 ]
 
 MIDDLEWARE = [
@@ -135,3 +136,12 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+# SASS Processor
+SASS_PROCESSOR_ROOT = STATIC_ROOT
+SASS_PROCESSOR_ENABLED = os.environ.get('DEBUG', False) == 'True'
+STATICFILES_FINDERS = [
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'sass_processor.finders.CssFinder',
+]
