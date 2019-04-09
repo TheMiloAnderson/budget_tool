@@ -44,7 +44,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_registration',
-    'budget_tool_project'
+    'budget_tool_project',
+    'budgets_app'
 ]
 
 MIDDLEWARE = [

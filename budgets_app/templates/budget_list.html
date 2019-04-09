@@ -1,0 +1,9 @@
+{% extends 'generic/base.html'%}
+
+{% block content %}
+<ul>
+    {% for budget in budgets %}
+    <li><a href="{{ budget.id }}">{{ budget.name }}</a></li>
+    {% endfor %}
+</ul>
+{% endblock content %}
