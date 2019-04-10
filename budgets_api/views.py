@@ -15,3 +15,4 @@ class UserAPIView(generics.RetrieveAPIView):
 class RegisterAPIView(generics.CreateAPIView):
     serializer_class = UserSerializer
     permission_classes = ''
+    authentication_classes = (TokenAuthentication, )

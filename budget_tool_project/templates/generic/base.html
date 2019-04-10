@@ -14,8 +14,10 @@
     </head>
     <body>
         <header>
-            <h1>Django</h1>
-            <h4>Welcome, {{ user.username }}</h4>
+            <h1>Django Budgets</h1>
+            {% if user.is_authenticated %}
+                <h4>Welcome, {{ user.username }}</h4>
+            {% endif %}
         </header>
         <nav>
             <ul>
