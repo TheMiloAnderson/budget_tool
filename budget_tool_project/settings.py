@@ -46,7 +46,8 @@ INSTALLED_APPS = [
     'django_registration',
     'budget_tool_project',
     'budgets_app',
-    'sass_processor'
+    'sass_processor',
+    'budgets_api'
 ]
 
 MIDDLEWARE = [

@@ -15,6 +15,7 @@ django-sass-processor = "*"
 libsass = "*"
 factory-boy = "*"
 faker = "*"
+djangorestframework = "*"
 
 [requires]
 python_version = "3.7"
