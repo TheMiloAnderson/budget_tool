@@ -17,11 +17,10 @@ class UserSerializer(serializers.ModelSerializer):
             'last_name'
         )
 
-        def create(self, validated_data):
-            user = super().create({
-                'username': validated_data['username'],
-                'email': validated_data['email']
-            })
-            user.set_password(validated_data['password'])
-            user.save()
-            return user
+    def create(self, validated_data):
+        user = super().create({
+            'username': validated_data['username']
+        })
+        user.set_password(validated_data['password'])
+        user.save()
+        return user
