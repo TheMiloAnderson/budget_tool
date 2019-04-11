@@ -48,7 +48,10 @@ INSTALLED_APPS = [
     'budget_tool_project',
     'budgets_app',
     'sass_processor',
-    'budgets_api'
+    'budgets_api',
+    'corsheaders',
+    'rest_framework.authtoken',
+    'rest_framework'
 ]
 
 MIDDLEWARE = [
