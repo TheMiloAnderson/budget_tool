@@ -30,6 +30,7 @@ ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '').split()
 # Registration settings
 ACCOUNT_ACTIVATION_DAYS = 7
 LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
 if DEBUG:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
@@ -46,7 +47,11 @@ INSTALLED_APPS = [
     'django_registration',
     'budget_tool_project',
     'budgets_app',
-    'sass_processor'
+    'sass_processor',
+    'budgets_api',
+    'corsheaders',
+    'rest_framework.authtoken',
+    'rest_framework'
 ]
 
 MIDDLEWARE = [

@@ -1,8 +1,10 @@
 autopep8==1.4.3
 confusable-homoglyphs==3.2.0
 Django==2.2
+django-cors-headers==2.5.2
 django-registration==3.0
 django-sass-processor==0.7.3
+djangorestframework==3.9.2
 factory-boy==2.11.1
 Faker==1.0.4
 libsass==0.18.0
