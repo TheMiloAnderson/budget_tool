@@ -2,7 +2,7 @@ from django.test import TestCase, RequestFactory
 from rest_framework.test import APITestCase, force_authenticate, APIRequestFactory
 from budget_tool_project.factories import (
     UserFactory, BudgetFactory, TransactionFactory)
-from budgets_app.models import Budget, Transaction
+from budgets_app.models import Budget, Transaction, User
 
 
 class TestUserAPI(APITestCase):
@@ -52,8 +52,8 @@ class TestBudgetAPI(APITestCase):
         res = self.client.post('/api/v1/budgets', budget)
         token = '"Authorization: Token ' + str(self.user.auth_token) + '"'
         res = self.client.get('/api/v1/budgets ' + token)
-        self.assertTrue(res.data['name'] == 'red bull')
+        self.assertTrue(res.content['name'] == 'red bull')
 
     def test_not_logged_in(self):
         res = self.client.get('/api/v1/budgets')
-        self.assertEqual(res.status_code == 404)
+        self.assertEqual(res.status_code, 404)
