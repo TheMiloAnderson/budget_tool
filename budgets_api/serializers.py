@@ -1,5 +1,6 @@
 from rest_framework import serializers
 from django.contrib.auth.models import User
+from budgets_app.models import Budget, Transaction
 from django.contrib.auth.hashers import make_password
 
 
@@ -24,3 +25,28 @@ class UserSerializer(serializers.ModelSerializer):
         user.set_password(validated_data['password'])
         user.save()
         return user
+
+
+class BudgetSerializer(serializers.HyperlinkedModelSerializer):
+    user = serializers.HyperlinkedRelatedField(
+        view_name='user_api',
+        read_only=True
+    )
+
+    class Meta:
+        model = Budget
+        fields = (
+            'name',
+            'user',
+            'total_budget'
+        )
+
+
+class TransactionSerializer(serializers.ModelSerializer):
+    budget = serializers.HyperlinkedRelatedField(
+        view_name='budget_api',
+        read_only=True
+    )
+
+    class Meta:
+        model = Transaction
