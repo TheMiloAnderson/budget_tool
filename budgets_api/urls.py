@@ -15,7 +15,7 @@ urlpatterns = [
          views.obtain_auth_token, name='login_api'),
     path('budgets',
          BudgetListAPIView.as_view(), name='budget_list_api'),
-    path('budgets/<int:budget_id>',
+    path('budgets/<int:pk>',
          BudgetDetailAPIView.as_view(), name='budget_detail_api'),
     path('transactions',
          TransactionListAPIView.as_view(), name='transaction_list_api'),
