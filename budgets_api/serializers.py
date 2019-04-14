@@ -36,6 +36,7 @@ class BudgetSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Budget
         fields = (
+            'id',
             'name',
             'user',
             'total_budget'
@@ -51,6 +52,7 @@ class TransactionSerializer(serializers.ModelSerializer):
     class Meta:
         model = Transaction
         fields = (
+            'id',
             'description',
             'budget',
             'type',

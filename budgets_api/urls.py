@@ -19,6 +19,6 @@ urlpatterns = [
          BudgetDetailAPIView.as_view(), name='budget_detail_api'),
     path('transactions',
          TransactionListAPIView.as_view(), name='transaction_list_api'),
-    path('transactions/<int:transaction_id>',
+    path('transactions/<int:pk>',
          TransactionDetailAPIView.as_view(), name='transaction_list_api')
 ]
