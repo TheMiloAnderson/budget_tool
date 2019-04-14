@@ -66,5 +66,5 @@ class TransactionDetailAPIView(generics.RetrieveAPIView):
     authentication_classes = (TokenAuthentication,)
 
     def get_queryset(self):
-        return Budget.objects.filter(
-            budget__user__id=self.request.user.id)
+        return Transaction.objects.filter(
+            budget__user__username=self.request.user.username)
